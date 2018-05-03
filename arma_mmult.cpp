@@ -5,7 +5,7 @@ using namespace Rcpp;
 
 // [[Rcpp::export]]
 arma::mat arma_mmult(arma::mat matrix1, arma::mat matrix2) {
-  
+  return matrix1 * matrix2;
 }
 
 // You can include R code blocks in C++ files processed with sourceCpp
@@ -17,5 +17,6 @@ arma::mat arma_mmult(arma::mat matrix1, arma::mat matrix2) {
 set.seed(1.23)
 a <- matrix(rnorm(1000), ncol = 20)
 b <- matrix(rnorm(1000), nrow = 20)
-arma_mmult(a, b)
+c <- arma_mmult(a, b)
+c[1:5, 1:5]
 */
